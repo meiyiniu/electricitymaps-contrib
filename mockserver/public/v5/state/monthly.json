@@ -107,6 +107,928 @@
           "stateDatetime": "2022-07-01T00:00:00Z"
         }
       ],
+      "AR-BAS": [
+        {
+          "co2intensity": 389.64,
+          "co2intensityProduction": 389.64,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.7847,
+          "fossilFuelRatioProduction": 0.7847,
+          "renewableRatio": 0.21530000000000002,
+          "renewableRatioProduction": 0.21530000000000002,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 342.89,
+          "co2intensityProduction": 342.89,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.6843,
+          "fossilFuelRatioProduction": 0.6843,
+          "renewableRatio": 0.3157,
+          "renewableRatioProduction": 0.3157,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 341.94,
+          "co2intensityProduction": 341.94,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.6823,
+          "fossilFuelRatioProduction": 0.6823,
+          "renewableRatio": 0.3177,
+          "renewableRatioProduction": 0.3177,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 354.66,
+          "co2intensityProduction": 354.66,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.7095999999999999,
+          "fossilFuelRatioProduction": 0.7095999999999999,
+          "renewableRatio": 0.2904,
+          "renewableRatioProduction": 0.2904,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 341.99,
+          "co2intensityProduction": 341.99,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.6823999999999999,
+          "fossilFuelRatioProduction": 0.6823999999999999,
+          "renewableRatio": 0.3176,
+          "renewableRatioProduction": 0.3176,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 348.56,
+          "co2intensityProduction": 348.56,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.6965,
+          "fossilFuelRatioProduction": 0.6965,
+          "renewableRatio": 0.3035,
+          "renewableRatioProduction": 0.3035,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-BAS",
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 384.12,
+          "co2intensityProduction": 384.12,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.7728,
+          "fossilFuelRatioProduction": 0.7728,
+          "renewableRatio": 0.22719999999999999,
+          "renewableRatioProduction": 0.22719999999999999,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 378.75,
+          "co2intensityProduction": 378.75,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.7613,
+          "fossilFuelRatioProduction": 0.7613,
+          "renewableRatio": 0.23870000000000002,
+          "renewableRatioProduction": 0.23870000000000002,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 390.52,
+          "co2intensityProduction": 390.52,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.7865000000000001,
+          "fossilFuelRatioProduction": 0.7865000000000001,
+          "renewableRatio": 0.21350000000000002,
+          "renewableRatioProduction": 0.21350000000000002,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 437.59,
+          "co2intensityProduction": 437.59,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.8875,
+          "fossilFuelRatioProduction": 0.8875,
+          "renewableRatio": 0.1125,
+          "renewableRatioProduction": 0.1125,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 401.02,
+          "co2intensityProduction": 401.02,
+          "countryCode": "AR-BAS",
+          "fossilFuelRatio": 0.8090999999999999,
+          "fossilFuelRatioProduction": 0.8090999999999999,
+          "renewableRatio": 0.1909,
+          "renewableRatioProduction": 0.1909,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-CEN": [
+        {
+          "co2intensity": 128.2,
+          "co2intensityProduction": 106.95,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.16820000000000002,
+          "fossilFuelRatioProduction": 0.106,
+          "renewableRatio": 0.4539,
+          "renewableRatioProduction": 0.4526,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 163.28,
+          "co2intensityProduction": 160.36,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.20929999999999999,
+          "fossilFuelRatioProduction": 0.1707,
+          "renewableRatio": 0.4598,
+          "renewableRatioProduction": 0.47700000000000004,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 140.3,
+          "co2intensityProduction": 129,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.17079999999999998,
+          "fossilFuelRatioProduction": 0.13,
+          "renewableRatio": 0.4818,
+          "renewableRatioProduction": 0.506,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 160.12,
+          "co2intensityProduction": 163.27,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.19269999999999998,
+          "fossilFuelRatioProduction": 0.1747,
+          "renewableRatio": 0.4765,
+          "renewableRatioProduction": 0.4825,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 217.36,
+          "co2intensityProduction": 231.46,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.2803,
+          "fossilFuelRatioProduction": 0.2753,
+          "renewableRatio": 0.42,
+          "renewableRatioProduction": 0.41340000000000005,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 182.92,
+          "co2intensityProduction": 188.3,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.23120000000000002,
+          "fossilFuelRatioProduction": 0.2112,
+          "renewableRatio": 0.4556,
+          "renewableRatioProduction": 0.45890000000000003,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 177.13,
+          "co2intensityProduction": 182.85,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.2207,
+          "fossilFuelRatioProduction": 0.20079999999999998,
+          "renewableRatio": 0.4572,
+          "renewableRatioProduction": 0.45640000000000003,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 167.13,
+          "co2intensityProduction": 159.95,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.2097,
+          "fossilFuelRatioProduction": 0.172,
+          "renewableRatio": 0.44179999999999997,
+          "renewableRatioProduction": 0.46009999999999995,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 159.58,
+          "co2intensityProduction": 149.74,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.1942,
+          "fossilFuelRatioProduction": 0.1536,
+          "renewableRatio": 0.4164,
+          "renewableRatioProduction": 0.42229999999999995,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 134.29,
+          "co2intensityProduction": 145.39,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.14730000000000001,
+          "fossilFuelRatioProduction": 0.1553,
+          "renewableRatio": 0.5549000000000001,
+          "renewableRatioProduction": 0.5425,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 83.93,
+          "co2intensityProduction": 103.68,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.0721,
+          "fossilFuelRatioProduction": 0.0962,
+          "renewableRatio": 0.5537,
+          "renewableRatioProduction": 0.5011,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 71,
+          "co2intensityProduction": 90.69,
+          "countryCode": "AR-CEN",
+          "fossilFuelRatio": 0.0555,
+          "fossilFuelRatioProduction": 0.0782,
+          "renewableRatio": 0.5401,
+          "renewableRatioProduction": 0.4747,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-COM": [
+        {
+          "co2intensity": 160.61,
+          "co2intensityProduction": 169.83,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.2711,
+          "fossilFuelRatioProduction": 0.2889,
+          "renewableRatio": 0.4364,
+          "renewableRatioProduction": 0.4568,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 197.79,
+          "co2intensityProduction": 205.83,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3448,
+          "fossilFuelRatioProduction": 0.36060000000000003,
+          "renewableRatio": 0.3726,
+          "renewableRatioProduction": 0.3861,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 191.84,
+          "co2intensityProduction": 194.38,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.32899999999999996,
+          "fossilFuelRatioProduction": 0.3345,
+          "renewableRatio": 0.40759999999999996,
+          "renewableRatioProduction": 0.4211,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 219.31,
+          "co2intensityProduction": 217.91,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3923,
+          "fossilFuelRatioProduction": 0.39020000000000005,
+          "renewableRatio": 0.4407,
+          "renewableRatioProduction": 0.446,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 192.3,
+          "co2intensityProduction": 190.58,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3319,
+          "fossilFuelRatioProduction": 0.3293,
+          "renewableRatio": 0.49079999999999996,
+          "renewableRatioProduction": 0.49700000000000005,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 201.89,
+          "co2intensityProduction": 201.84,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3522,
+          "fossilFuelRatioProduction": 0.3527,
+          "renewableRatio": 0.4224,
+          "renewableRatioProduction": 0.4288,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 190.36,
+          "co2intensityProduction": 195.6,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3297,
+          "fossilFuelRatioProduction": 0.34,
+          "renewableRatio": 0.4104,
+          "renewableRatioProduction": 0.4217,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 172.66,
+          "co2intensityProduction": 172.78,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.2887,
+          "fossilFuelRatioProduction": 0.2893,
+          "renewableRatio": 0.4816,
+          "renewableRatioProduction": 0.48829999999999996,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 159.04,
+          "co2intensityProduction": 156.05,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.2541,
+          "fossilFuelRatioProduction": 0.2483,
+          "renewableRatio": 0.5273,
+          "renewableRatioProduction": 0.5356000000000001,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 165.3,
+          "co2intensityProduction": 163.66,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.271,
+          "fossilFuelRatioProduction": 0.268,
+          "renewableRatio": 0.5268999999999999,
+          "renewableRatioProduction": 0.5347999999999999,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 213.4,
+          "co2intensityProduction": 213.19,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.3678,
+          "fossilFuelRatioProduction": 0.36719999999999997,
+          "renewableRatio": 0.4239,
+          "renewableRatioProduction": 0.4279,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 224.24,
+          "co2intensityProduction": 223.83,
+          "countryCode": "AR-COM",
+          "fossilFuelRatio": 0.39549999999999996,
+          "fossilFuelRatioProduction": 0.3946,
+          "renewableRatio": 0.4007,
+          "renewableRatioProduction": 0.4011,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-CUY": [
+        {
+          "co2intensity": 414.83,
+          "co2intensityProduction": 419.46,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.6437,
+          "fossilFuelRatioProduction": 0.6469,
+          "renewableRatio": 0.3471,
+          "renewableRatioProduction": 0.3531,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 449.24,
+          "co2intensityProduction": 453.33,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.691,
+          "fossilFuelRatioProduction": 0.6929000000000001,
+          "renewableRatio": 0.3028,
+          "renewableRatioProduction": 0.3071,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 322.39,
+          "co2intensityProduction": 323.67,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.49770000000000003,
+          "fossilFuelRatioProduction": 0.4985,
+          "renewableRatio": 0.49579999999999996,
+          "renewableRatioProduction": 0.5015,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 209.33,
+          "co2intensityProduction": 204.89,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.3236,
+          "fossilFuelRatioProduction": 0.3195,
+          "renewableRatio": 0.6717,
+          "renewableRatioProduction": 0.6805,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 204,
+          "co2intensityProduction": 200.81,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.30829999999999996,
+          "fossilFuelRatioProduction": 0.3063,
+          "renewableRatio": 0.6907,
+          "renewableRatioProduction": 0.6937000000000001,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 368.72,
+          "co2intensityProduction": 366.83,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.5820000000000001,
+          "fossilFuelRatioProduction": 0.578,
+          "renewableRatio": 0.4163,
+          "renewableRatioProduction": 0.42200000000000004,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 243.64,
+          "co2intensityProduction": 238.66,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.3778,
+          "fossilFuelRatioProduction": 0.37070000000000003,
+          "renewableRatio": 0.6203,
+          "renewableRatioProduction": 0.6293,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 351.22,
+          "co2intensityProduction": 350.15,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.5561,
+          "fossilFuelRatioProduction": 0.5533,
+          "renewableRatio": 0.4422,
+          "renewableRatioProduction": 0.44670000000000004,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 320.74,
+          "co2intensityProduction": 320.8,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.552,
+          "fossilFuelRatioProduction": 0.5525,
+          "renewableRatio": 0.44799999999999995,
+          "renewableRatioProduction": 0.4475,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 316.22,
+          "co2intensityProduction": 315.46,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.5616,
+          "fossilFuelRatioProduction": 0.56,
+          "renewableRatio": 0.4362,
+          "renewableRatioProduction": 0.44,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 343.27,
+          "co2intensityProduction": 341.21,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.6171,
+          "fossilFuelRatioProduction": 0.6131,
+          "renewableRatio": 0.3778,
+          "renewableRatioProduction": 0.38689999999999997,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 319.56,
+          "co2intensityProduction": 321.48,
+          "countryCode": "AR-CUY",
+          "fossilFuelRatio": 0.5294,
+          "fossilFuelRatioProduction": 0.5322,
+          "renewableRatio": 0.4653,
+          "renewableRatioProduction": 0.4678,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-LIT": [
+        {
+          "co2intensity": 286.07,
+          "co2intensityProduction": 300.05,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.33030000000000004,
+          "fossilFuelRatioProduction": 0.3458,
+          "renewableRatio": 0.49439999999999995,
+          "renewableRatioProduction": 0.5031,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 375.32,
+          "co2intensityProduction": 391.01,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.45049999999999996,
+          "fossilFuelRatioProduction": 0.4672,
+          "renewableRatio": 0.4,
+          "renewableRatioProduction": 0.3978,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 322.59,
+          "co2intensityProduction": 330.69,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.385,
+          "fossilFuelRatioProduction": 0.3934,
+          "renewableRatio": 0.486,
+          "renewableRatioProduction": 0.4869,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 388.43,
+          "co2intensityProduction": 399.17,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.4874,
+          "fossilFuelRatioProduction": 0.4965,
+          "renewableRatio": 0.38299999999999995,
+          "renewableRatioProduction": 0.37770000000000004,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 373.64,
+          "co2intensityProduction": 379.17,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.46880000000000005,
+          "fossilFuelRatioProduction": 0.4715,
+          "renewableRatio": 0.4061,
+          "renewableRatioProduction": 0.40590000000000004,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 361.58,
+          "co2intensityProduction": 367.16,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.4561,
+          "fossilFuelRatioProduction": 0.46,
+          "renewableRatio": 0.47590000000000005,
+          "renewableRatioProduction": 0.478,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 276.2,
+          "co2intensityProduction": 278.22,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.3358,
+          "fossilFuelRatioProduction": 0.33799999999999997,
+          "renewableRatio": 0.6015999999999999,
+          "renewableRatioProduction": 0.6031,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 396.87,
+          "co2intensityProduction": 408.2,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.4926,
+          "fossilFuelRatioProduction": 0.5028,
+          "renewableRatio": 0.43450000000000005,
+          "renewableRatioProduction": 0.42979999999999996,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 327.58,
+          "co2intensityProduction": 331.78,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.3932,
+          "fossilFuelRatioProduction": 0.395,
+          "renewableRatio": 0.5296,
+          "renewableRatioProduction": 0.5357,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 327.44,
+          "co2intensityProduction": 336.49,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.3946,
+          "fossilFuelRatioProduction": 0.4003,
+          "renewableRatio": 0.537,
+          "renewableRatioProduction": 0.5431,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 357.56,
+          "co2intensityProduction": 371.58,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.43979999999999997,
+          "fossilFuelRatioProduction": 0.4487,
+          "renewableRatio": 0.49520000000000003,
+          "renewableRatioProduction": 0.49439999999999995,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 342.6,
+          "co2intensityProduction": 354.79,
+          "countryCode": "AR-LIT",
+          "fossilFuelRatio": 0.4138,
+          "fossilFuelRatioProduction": 0.423,
+          "renewableRatio": 0.5088,
+          "renewableRatioProduction": 0.5061,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-NEA": [
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "countryCode": "AR-NEA",
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 510.86,
+          "co2intensityProduction": 514.3,
+          "countryCode": "AR-NEA",
+          "fossilFuelRatio": 0.6161,
+          "fossilFuelRatioProduction": 0.6197,
+          "renewableRatio": 0.3839,
+          "renewableRatioProduction": 0.3803,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 387.74,
+          "co2intensityProduction": 396.74,
+          "countryCode": "AR-NEA",
+          "fossilFuelRatio": 0.5181,
+          "fossilFuelRatioProduction": 0.5174,
+          "renewableRatio": 0.4819,
+          "renewableRatioProduction": 0.4826,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 120.31,
+          "co2intensityProduction": 114,
+          "countryCode": "AR-NEA",
+          "fossilFuelRatio": 0.1648,
+          "fossilFuelRatioProduction": 0.1522,
+          "renewableRatio": 0.8351999999999999,
+          "renewableRatioProduction": 0.8478,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 122.89,
+          "co2intensityProduction": 120.91,
+          "countryCode": "AR-NEA",
+          "fossilFuelRatio": 0.1711,
+          "fossilFuelRatioProduction": 0.1672,
+          "renewableRatio": 0.8289,
+          "renewableRatioProduction": 0.8328,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-NOA": [
+        {
+          "co2intensity": 113.11,
+          "co2intensityProduction": 39.87,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.09179999999999999,
+          "fossilFuelRatioProduction": 0.0141,
+          "renewableRatio": 0.856,
+          "renewableRatioProduction": 0.9859,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 179.99,
+          "co2intensityProduction": 61.42,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.1934,
+          "fossilFuelRatioProduction": 0.048600000000000004,
+          "renewableRatio": 0.6995999999999999,
+          "renewableRatioProduction": 0.9514,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 236.47,
+          "co2intensityProduction": 149.75,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.31379999999999997,
+          "fossilFuelRatioProduction": 0.2237,
+          "renewableRatio": 0.5816,
+          "renewableRatioProduction": 0.7763,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 281.86,
+          "co2intensityProduction": 220.97,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.41359999999999997,
+          "fossilFuelRatioProduction": 0.3635,
+          "renewableRatio": 0.5068,
+          "renewableRatioProduction": 0.6365,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 257.52,
+          "co2intensityProduction": 200.42,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.3826,
+          "fossilFuelRatioProduction": 0.3301,
+          "renewableRatio": 0.5543,
+          "renewableRatioProduction": 0.6698999999999999,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 241.82,
+          "co2intensityProduction": 180.44,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.3527,
+          "fossilFuelRatioProduction": 0.2961,
+          "renewableRatio": 0.5922,
+          "renewableRatioProduction": 0.7039,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 226.23,
+          "co2intensityProduction": 172.35,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.3249,
+          "fossilFuelRatioProduction": 0.28350000000000003,
+          "renewableRatio": 0.6161,
+          "renewableRatioProduction": 0.7165,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 274.04,
+          "co2intensityProduction": 207.43,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.3937,
+          "fossilFuelRatioProduction": 0.3406,
+          "renewableRatio": 0.5402,
+          "renewableRatioProduction": 0.6594,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 186.85,
+          "co2intensityProduction": 118.52,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.24100000000000002,
+          "fossilFuelRatioProduction": 0.1716,
+          "renewableRatio": 0.6986,
+          "renewableRatioProduction": 0.8284,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 151.89,
+          "co2intensityProduction": 89.13,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.1887,
+          "fossilFuelRatioProduction": 0.1209,
+          "renewableRatio": 0.7620999999999999,
+          "renewableRatioProduction": 0.8791,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 123.19,
+          "co2intensityProduction": 44.38,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.1186,
+          "fossilFuelRatioProduction": 0.0316,
+          "renewableRatio": 0.826,
+          "renewableRatioProduction": 0.9684,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 164.4,
+          "co2intensityProduction": 57.87,
+          "countryCode": "AR-NOA",
+          "fossilFuelRatio": 0.1801,
+          "fossilFuelRatioProduction": 0.0559,
+          "renewableRatio": 0.7365,
+          "renewableRatioProduction": 0.9440999999999999,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
+      "AR-PAT": [
+        {
+          "co2intensity": 32.08,
+          "co2intensityProduction": 31.16,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.0254,
+          "fossilFuelRatioProduction": 0.024300000000000002,
+          "renewableRatio": 0.2285,
+          "renewableRatioProduction": 0.2245,
+          "stateDatetime": "2021-08-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 51.22,
+          "co2intensityProduction": 49.61,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.0593,
+          "fossilFuelRatioProduction": 0.0567,
+          "renewableRatio": 0.1866,
+          "renewableRatioProduction": 0.1826,
+          "stateDatetime": "2021-09-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 55.13,
+          "co2intensityProduction": 52.21,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.0669,
+          "fossilFuelRatioProduction": 0.062,
+          "renewableRatio": 0.1959,
+          "renewableRatioProduction": 0.1929,
+          "stateDatetime": "2021-10-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 95.02,
+          "co2intensityProduction": 84.04,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1471,
+          "fossilFuelRatioProduction": 0.1285,
+          "renewableRatio": 0.1898,
+          "renewableRatioProduction": 0.17489999999999997,
+          "stateDatetime": "2021-11-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 90.3,
+          "co2intensityProduction": 76.67,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1378,
+          "fossilFuelRatioProduction": 0.11539999999999999,
+          "renewableRatio": 0.22940000000000002,
+          "renewableRatioProduction": 0.2173,
+          "stateDatetime": "2021-12-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 90.79,
+          "co2intensityProduction": 79.85,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1376,
+          "fossilFuelRatioProduction": 0.11900000000000001,
+          "renewableRatio": 0.2041,
+          "renewableRatioProduction": 0.1949,
+          "stateDatetime": "2022-01-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 75.19,
+          "co2intensityProduction": 69.93,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1081,
+          "fossilFuelRatioProduction": 0.0998,
+          "renewableRatio": 0.24230000000000002,
+          "renewableRatioProduction": 0.23600000000000002,
+          "stateDatetime": "2022-02-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 92.77,
+          "co2intensityProduction": 80.38,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1391,
+          "fossilFuelRatioProduction": 0.1208,
+          "renewableRatio": 0.244,
+          "renewableRatioProduction": 0.2297,
+          "stateDatetime": "2022-03-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 77.91,
+          "co2intensityProduction": 65.55,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1128,
+          "fossilFuelRatioProduction": 0.09369999999999999,
+          "renewableRatio": 0.3075,
+          "renewableRatioProduction": 0.29,
+          "stateDatetime": "2022-04-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 74.06,
+          "co2intensityProduction": 63.43,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1056,
+          "fossilFuelRatioProduction": 0.0858,
+          "renewableRatio": 0.31329999999999997,
+          "renewableRatioProduction": 0.3002,
+          "stateDatetime": "2022-05-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 77.37,
+          "co2intensityProduction": 59.32,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1107,
+          "fossilFuelRatioProduction": 0.0793,
+          "renewableRatio": 0.2887,
+          "renewableRatioProduction": 0.2742,
+          "stateDatetime": "2022-06-01T00:00:00Z"
+        },
+        {
+          "co2intensity": 96.06,
+          "co2intensityProduction": 71.49,
+          "countryCode": "AR-PAT",
+          "fossilFuelRatio": 0.1435,
+          "fossilFuelRatioProduction": 0.10369999999999999,
+          "renewableRatio": 0.3018,
+          "renewableRatioProduction": 0.2785,
+          "stateDatetime": "2022-07-01T00:00:00Z"
+        }
+      ],
       "AT": [
         {
           "co2intensity": 113.11,
