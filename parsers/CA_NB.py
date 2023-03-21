@@ -7,8 +7,6 @@ from typing import Optional
 
 import arrow
 
-# BeautifulSoup is used to parse HTML to get information
-from bs4 import BeautifulSoup
 from requests import Session
 
 timezone = "Canada/Atlantic"
