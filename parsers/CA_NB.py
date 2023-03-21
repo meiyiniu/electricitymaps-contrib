@@ -18,7 +18,7 @@ EXCHANGE_REGIONS = {
     "CA-QC": "Quebec",
     "US-NE-ISNE": "Maine",
     "CA-NS": "Nova Scotia",
-    "CA-PE": "PEI"
+    "CA-PE": "PEI",
 }
 
 
@@ -96,7 +96,9 @@ def fetch_exchange(
     flows = data["flow"]
 
     if EXCHANGE_REGIONS[zone_key2] not in flows:
-        raise NotImplementedError(f"This exchange pair '{sorted_zone_keys}' is not implemented")
+        raise NotImplementedError(
+            f"This exchange pair '{sorted_zone_keys}' is not implemented"
+        )
 
     result = {
         "datetime": arrow.utcnow().floor("minute").datetime,
