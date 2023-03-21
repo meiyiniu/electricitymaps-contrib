@@ -22,33 +22,6 @@ EXCHANGE_REGIONS = {
 }
 
 
-def _get_new_brunswick_flows(requests_obj):
-    """
-    Gets current electricity flows in and out of New Brunswick.
-
-    There is no reported data timestamp in the page.
-    The page returns current time and says "Times at which values are sampled may vary by as much as 5 minutes."
-    """
-
-    url = "https://tso.nbpower.com/Public/en/SystemInformation_realtime.asp"
-    response = requests_obj.get(url)
-
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    table = soup.find("table", attrs={"bordercolor": "#191970"})
-
-    rows = table.find_all("tr")
-
-    headers = rows[1].find_all("td")
-    values = rows[2].find_all("td")
-
-    flows = {
-        headers[i].text.strip(): float(row.text.strip()) for i, row in enumerate(values)
-    }
-
-    return flows
-
-
 def fetch_production(
     zone_key: str = "CA-NB",
     session: Optional[Session] = None,
