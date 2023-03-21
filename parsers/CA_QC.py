@@ -9,6 +9,7 @@ from requests import Session
 
 PRODUCTION_URL = "localhost:8000/province/QC/production"
 CONSUMPTION_URL = "https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/demande.json"
+
 # Reluctant to call it 'timezone', since we are importing 'timezone' from datetime
 timezone_id = "America/Montreal"
 

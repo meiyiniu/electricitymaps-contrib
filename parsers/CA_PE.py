@@ -10,7 +10,9 @@ import arrow
 from requests import Session
 
 timezone = "Canada/Atlantic"
+
 URL = "localhost:8000/province/PE"
+
 
 def fetch_production(
     zone_key: str = "CA-PE",
