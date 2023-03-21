@@ -78,7 +78,15 @@ def fetch_production(
     data = {
         "datetime": get_current_timestamp(),
         "zoneKey": zone_key,
-        "production": {x: production[x] for x in production if x != "battery storage"},
+        "production": {
+            "unknown": production["unknown"],
+            "hydro": production["hydro"],
+            # specify some sources that aren't present in Yukon as zero,
+            # this allows the analyzer to better estimate CO2eq
+            "coal": 0,
+            "nuclear": 0,
+            "geothermal": 0,
+        },
         "capacity": capacity,
         "source": data["source"],
     }
