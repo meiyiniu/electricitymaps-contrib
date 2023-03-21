@@ -78,14 +78,13 @@ def fetch_production(
     data = {
         "datetime": get_current_timestamp(),
         "zoneKey": zone_key,
-        "production": {
-            x: production[x] for x in production if x != "battery storage"
-        },
+        "production": {x: production[x] for x in production if x != "battery storage"},
         "capacity": capacity,
         "source": data["source"],
     }
 
     return data
+
 
 def get_current_timestamp():
     return arrow.to(TIMEZONE).datetime
