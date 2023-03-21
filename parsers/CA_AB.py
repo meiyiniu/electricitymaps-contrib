@@ -5,10 +5,6 @@
 """
 
 # Standard library imports
-import csv
-import logging
-import re
-import urllib.parse
 from datetime import datetime
 from logging import Logger, getLogger
 from typing import Any, Dict, Optional
