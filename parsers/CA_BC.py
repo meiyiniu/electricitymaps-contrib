@@ -48,6 +48,7 @@ def fetch_exchange(
         "source": data["source"],
     }
 
+
 def get_current_timestamp():
     return arrow.to(TIMEZONE).datetime
 
