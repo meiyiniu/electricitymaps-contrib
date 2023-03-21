@@ -30,7 +30,7 @@ def fetch_production(
             "This parser is unable to give information more than 24 hours in the past"
         )
     session = session or Session()
-    data = session.get(f"{URL}/price").json()
+    data = session.get(f"{URL}/production").json()
     return validation.validate(
         {
             "datetime": get_current_timestamp(),
@@ -75,7 +75,7 @@ def fetch_exchange(
         raise NotImplementedError("This exchange pair is not implemented")
 
     session = session or Session()
-    data = session.get(f"{URL}/price").json()
+    data = session.get(f"{URL}/exchange").json()
     flow = data["flow"]
     if EXCHANGE_REGIONS[zone_key2] not in flow:
         raise NotImplementedError("This exchange pair is not implemented")
