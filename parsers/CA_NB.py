@@ -12,6 +12,14 @@ from bs4 import BeautifulSoup
 from requests import Session
 
 timezone = "Canada/Atlantic"
+URL = "localhost:8000/province/NB"
+
+EXCHANGE_REGIONS = {
+    "CA-QC": "Quebec",
+    "US-NE-ISNE": "Maine",
+    "CA-NS": "Nova Scotia",
+    "CA-PE": "PEI"
+}
 
 
 def _get_new_brunswick_flows(requests_obj):
@@ -57,33 +65,17 @@ def fetch_production(
     if target_datetime:
         raise NotImplementedError("This parser is not yet able to parse past dates")
 
-    requests_obj = session or Session()
-    flows = _get_new_brunswick_flows(requests_obj)
+    data = session.get(f"{URL}/price").json()
 
-    # nb_flows['NB Demand'] is the use of electricity in NB
-    # 'EMEC', 'ISO-NE', 'MPS', 'NOVA SCOTIA', 'PEI', and 'QUEBEC'
-    # are exchanges - positive for exports, negative for imports
-    # Electricity generated in NB is then 'NB Demand' plus all the others
-
-    generated = (
-        flows["NB Demand"]
-        + flows["EMEC"]
-        + flows["ISO-NE"]
-        + flows["MPS"]
-        + flows["NOVA SCOTIA"]
-        + flows["PEI"]
-        + flows["QUEBEC"]
-    )
-
-    data = {
+    result = {
         "datetime": arrow.utcnow().floor("minute").datetime,
         "zoneKey": zone_key,
-        "production": {"unknown": generated},
-        "storage": {},
-        "source": "tso.nbpower.com",
+        "production": data["production"],
+        "storage": data["storage"] if data["storage"] else {},
+        "source": data["source"],
     }
 
-    return data
+    return result
 
 
 def fetch_exchange(
@@ -94,40 +86,26 @@ def fetch_exchange(
     logger: Logger = getLogger(__name__),
 ) -> dict:
     """Requests the last known power exchange (in MW) between two regions."""
+
     if target_datetime:
         raise NotImplementedError("This parser is not yet able to parse past dates")
 
     sorted_zone_keys = "->".join(sorted([zone_key1, zone_key2]))
 
-    requests_obj = session or Session()
-    flows = _get_new_brunswick_flows(requests_obj)
+    data = session.get(f"{URL}/exchange").json()
+    flows = data["flow"]
 
-    # In this source, positive values are exports and negative are imports.
-    # In expected result, "net" represents an export.
-    # So these can be used directly.
+    if EXCHANGE_REGIONS[zone_key2] not in flows:
+        raise NotImplementedError(f"This exchange pair '{sorted_zone_keys}' is not implemented")
 
-    if sorted_zone_keys == "CA-NB->CA-QC":
-        value = flows["QUEBEC"]
-    elif sorted_zone_keys == "CA-NB->US-NE-ISNE":
-        # all of these exports are to Maine
-        # (see https://www.nbpower.com/en/about-us/our-energy/system-map/),
-        # currently this is mapped to ISO-NE
-        value = flows["EMEC"] + flows["ISO-NE"] + flows["MPS"]
-    elif sorted_zone_keys == "CA-NB->CA-NS":
-        value = flows["NOVA SCOTIA"]
-    elif sorted_zone_keys == "CA-NB->CA-PE":
-        value = flows["PEI"]
-    else:
-        raise NotImplementedError("This exchange pair is not implemented")
-
-    data = {
+    result = {
         "datetime": arrow.utcnow().floor("minute").datetime,
         "sortedZoneKeys": sorted_zone_keys,
-        "netFlow": value,
-        "source": "tso.nbpower.com",
+        "netFlow": flows[EXCHANGE_REGIONS[zone_key2]],
+        "source": data["source"],
     }
 
-    return data
+    return result
 
 
 if __name__ == "__main__":
