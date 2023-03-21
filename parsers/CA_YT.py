@@ -8,7 +8,7 @@ import arrow
 from bs4 import BeautifulSoup
 from requests import Session
 
-timezone = "America/Whitehorse"
+TIMEZONE = "America/Whitehorse"
 
 
 def fetch_production(
@@ -56,19 +56,15 @@ def fetch_production(
 
     requests_obj = session or Session()
 
-    url = "http://www.yukonenergy.ca/consumption/chart_current.php?chart=current&width=420"
-    response = requests_obj.get(url)
+    url = "localhost:8000/province/YT"
+    data = requests_obj.get(f"{url}/production").json()
+    capacity = data["capacity"]
+    production = data["production"]
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(data.text, "html.parser")
 
     def find_div_by_class(soup_obj, cls):
         return soup_obj.find("div", attrs={"class": cls})
-
-    def parse_mw(text):
-        try:
-            return float(text[: text.index("MW")])
-        except ValueError:
-            return 0
 
     # date is specified like "Thursday, June 22, 2017"
     source_date = find_div_by_class(soup, "current_date").text
@@ -77,49 +73,22 @@ def fetch_production(
     source_time = find_div_by_class(soup, "current_time").text
     datetime_text = "{} {}".format(source_date, source_time)
     datetime_arrow = arrow.get(datetime_text, "dddd, MMMM D, YYYY h:mm A")
-    datetime_datetime = arrow.get(datetime_arrow.datetime, timezone).datetime
-
-    # generation is specified like "37.69 MW - hydro"
-    hydro_div = find_div_by_class(soup, "load_hydro")
-    hydro_text = hydro_div.div.text
-    hydro_generation = parse_mw(hydro_text)
-
-    hydro_cap_div = find_div_by_class(soup, "avail_hydro")
-    if hydro_cap_div:
-        hydro_cap_text = hydro_cap_div.div.text
-        hydro_capacity = parse_mw(hydro_cap_text)
-    else:
-        # hydro capacity is not provided when thermal is used
-        hydro_capacity = None
-
-    thermal_div = find_div_by_class(soup, "load_thermal")
-    if thermal_div.div:
-        thermal_text = thermal_div.div.text
-        thermal_generation = parse_mw(thermal_text)
-    else:
-        # thermal is not always used and when it's not used, it's not specified in HTML
-        thermal_generation = 0
+    datetime_datetime = arrow.get(datetime_arrow.datetime, TIMEZONE).datetime
 
     data = {
-        "datetime": datetime_datetime,
+        "datetime": get_current_timestamp(),
         "zoneKey": zone_key,
         "production": {
-            "unknown": thermal_generation,
-            "hydro": hydro_generation,
-            # specify some sources that aren't present in Yukon as zero,
-            # this allows the analyzer to better estimate CO2eq
-            "coal": 0,
-            "nuclear": 0,
-            "geothermal": 0,
+            x: production[x] for x in production if x != "battery storage"
         },
-        "storage": {},
-        "source": "www.yukonenergy.ca",
+        "capacity": capacity,
+        "source": data["source"],
     }
 
-    if hydro_capacity:
-        data.update({"capacity": {"hydro": hydro_capacity}})
-
     return data
+
+def get_current_timestamp():
+    return arrow.to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
