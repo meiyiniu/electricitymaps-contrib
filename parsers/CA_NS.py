@@ -13,9 +13,7 @@ from parsers.lib import validation
 
 TIMEZONE = "AST"
 URL = "localhost:8000/province/NS"
-EXCHANGE_REGIONS = {
-    "CA-NB": "New Brunswick"
-}
+EXCHANGE_REGIONS = {"CA-NB": "New Brunswick"}
 
 
 def fetch_production(
@@ -36,15 +34,15 @@ def fetch_production(
             "datetime": get_current_timestamp(),
             "production": data["production"],
             "source": data["source"],
-            "zoneKey": zone_key
+            "zoneKey": zone_key,
         },
         expected_range={
             "coal": (0, 1300),
             "gas": (0, 700),
             "biomass": (0, 100),
             "hydro": (0, 500),
-            "wind": (0, 700)
-        }
+            "wind": (0, 700),
+        },
     )
 
 
@@ -84,7 +82,7 @@ def fetch_exchange(
         "datetime": get_current_timestamp(),
         "sortedZoneKeys": sorted_zone_keys,
         "netFlow": float(flow[EXCHANGE_REGIONS[zone_key2]]),
-        "source": data["source"]
+        "source": data["source"],
     }
 
 
