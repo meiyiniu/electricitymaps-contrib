@@ -7,11 +7,11 @@ from typing import Optional
 import arrow
 from requests import Session
 
-PRODUCTION_URL = "localhost:8000/province/QC/production"
+PRODUCTION_URL = "http://localhost:8000/province/QC/production"
 CONSUMPTION_URL = "https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/demande.json"
 
 # Reluctant to call it 'timezone', since we are importing 'timezone' from datetime
-timezone_id = "America/Montreal"
+TIMEZONE = "America/Montreal"
 
 
 def fetch_production(
@@ -43,7 +43,7 @@ def fetch_production(
     data = _fetch_quebec_production(session)
     res = {
         "zoneKey": zone_key,
-        "datetime": data["datetime"],
+        "datetime": get_current_timestamp(),
         "production": data["production"],
         "source": "hydroquebec.com",
     }
@@ -63,7 +63,7 @@ def fetch_consumption(
             list_res.append(
                 {
                     "zoneKey": zone_key,
-                    "datetime": arrow.get(elem["date"], tzinfo=timezone_id).datetime,
+                    "datetime": get_current_timestamp(),
                     "consumption": elem["valeurs"]["demandeTotal"],
                     "source": "hydroquebec.com",
                 }
@@ -99,6 +99,10 @@ def _fetch_quebec_consumption(
             )
         )
     return response.json()
+
+
+def get_current_timestamp():
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":

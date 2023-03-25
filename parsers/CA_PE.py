@@ -9,9 +9,9 @@ from typing import Any, Dict, Optional
 import arrow
 from requests import Session
 
-timezone = "Canada/Atlantic"
+TIMEZONE = "Canada/Atlantic"
 
-URL = "localhost:8000/province/PE"
+URL = "http://localhost:8000/province/PE"
 
 
 def fetch_production(
@@ -31,7 +31,7 @@ def fetch_production(
         return None
 
     data = {
-        "datetime": pei_info["datetime"],
+        "datetime": get_current_timestamp(),
         "zoneKey": zone_key,
         "production": pei_info["production"],
         "storage": {},
@@ -67,13 +67,17 @@ def fetch_exchange(
     # We have sorted_zone_keys 'CA-NB->CA-PE', so it's export *from* NB,
     # and import *to* PEI.
     data = {
-        "datetime": pei_info["datetime"],
+        "datetime": get_current_timestamp(),
         "sortedZoneKeys": sorted_zone_keys,
         "netFlow": pei_info["flow"]["New Brunswick"],
         "source": "princeedwardisland.ca",
     }
 
     return data
+
+
+def get_current_timestamp():
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
