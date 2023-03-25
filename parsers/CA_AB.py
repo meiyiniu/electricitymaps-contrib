@@ -5,10 +5,6 @@
 """
 
 # Standard library imports
-import csv
-import logging
-import re
-import urllib.parse
 from datetime import datetime
 from logging import Logger, getLogger
 from typing import Any, Dict, Optional
@@ -23,8 +19,14 @@ from parsers.lib import validation
 DEFAULT_ZONE_KEY = "CA-AB"
 MINIMUM_PRODUCTION_THRESHOLD = 10  # MW
 TIMEZONE = "Canada/Mountain"
-URL = urllib.parse.urlsplit("http://ets.aeso.ca/ets_web/ip/Market/Reports")
-URL_STRING = urllib.parse.urlunsplit(URL)
+URL = "http://localhost:8000/province/AB"
+
+EXCHANGE_REGIONS = {
+    "CA-AB": "Alberta",
+    "CA-BC": "British Columbia",
+    "CA-SK": "Saskatchewan",
+    "US-NW-NWMT": "Montana",
+}
 
 
 def fetch_exchange(
@@ -38,24 +40,16 @@ def fetch_exchange(
     if target_datetime:
         raise NotImplementedError("Currently unable to scrape historical data")
     session = session or Session()
-    response = session.get(
-        f"{URL_STRING}/CSDReportServlet", params={"contentType": "csv"}
-    )
-    interchange = dict(csv.reader(response.text.split("\r\n\r\n")[4].splitlines()))
-    flows = {
-        f"{DEFAULT_ZONE_KEY}->CA-BC": interchange["British Columbia"],
-        f"{DEFAULT_ZONE_KEY}->CA-SK": interchange["Saskatchewan"],
-        f"{DEFAULT_ZONE_KEY}->US-MT": interchange["Montana"],
-        f"{DEFAULT_ZONE_KEY}->US-NW-NWMT": interchange["Montana"],
-    }
+    data = session.get(f"{URL}/exchange").json()
+    flow = data["flow"]
     sorted_zone_keys = "->".join(sorted((zone_key1, zone_key2)))
-    if sorted_zone_keys not in flows:
+    if EXCHANGE_REGIONS[zone_key2] not in flow:
         raise NotImplementedError(f"Pair '{sorted_zone_keys}' not implemented")
     return {
-        "datetime": get_csd_report_timestamp(response.text),
+        "datetime": get_current_timestamp(),
         "sortedZoneKeys": sorted_zone_keys,
-        "netFlow": float(flows[sorted_zone_keys]),
-        "source": URL.netloc,
+        "netFlow": float(flow[EXCHANGE_REGIONS[zone_key2]]),
+        "source": data["source"],
     }
 
 
@@ -69,19 +63,16 @@ def fetch_price(
     if target_datetime:
         raise NotImplementedError("Currently unable to scrape historical data")
     session = session or Session()
-    response = session.get(
-        f"{URL_STRING}/SMPriceReportServlet", params={"contentType": "csv"}
-    )
+    data = session.get(f"{URL}/price").json()
+
     return [
         {
-            "currency": "CAD",
-            "datetime": arrow.get(row[0], "MM/DD/YYYY HH", tzinfo=TIMEZONE).datetime,
-            "price": float(row[1]),
+            "currency": data["currency"],
+            "datetime": get_current_timestamp(),
+            "price": data["price"],
             "source": URL.netloc,
             "zoneKey": zone_key,
         }
-        for row in csv.reader(response.text.split("\r\n\r\n")[2].splitlines()[1:])
-        if row[1] != "-"
     ]
 
 
@@ -95,41 +86,20 @@ def fetch_production(
     if target_datetime:
         raise NotImplementedError("This parser is not yet able to parse past dates")
     session = session or Session()
-    response = session.get(
-        f"{URL_STRING}/CSDReportServlet", params={"contentType": "csv"}
-    )
-    generation = {
-        row[0]: {
-            "MC": float(row[1]),  # maximum capability
-            "TNG": float(row[2]),  # total net generation
-        }
-        for row in csv.reader(response.text.split("\r\n\r\n")[3].splitlines())
-    }
+    data = session.get(f"{URL}/production").json()
+    capacity = data["capacity"]
+    production = data["production"]
+
     return validation.validate(
         {
-            "capacity": {
-                "gas": generation["GAS"]["MC"],
-                "hydro": generation["HYDRO"]["MC"],
-                "battery storage": generation["ENERGY STORAGE"]["MC"],
-                "solar": generation["SOLAR"]["MC"],
-                "wind": generation["WIND"]["MC"],
-                "biomass": generation["OTHER"]["MC"],
-                "unknown": generation["DUAL FUEL"]["MC"],
-                "coal": generation["COAL"]["MC"],
-            },
-            "datetime": get_csd_report_timestamp(response.text),
+            "capacity": capacity,
+            "datetime": get_current_timestamp(),
             "production": {
-                "gas": generation["GAS"]["TNG"],
-                "hydro": generation["HYDRO"]["TNG"],
-                "solar": generation["SOLAR"]["TNG"],
-                "wind": generation["WIND"]["TNG"],
-                "biomass": generation["OTHER"]["TNG"],
-                "unknown": generation["DUAL FUEL"]["TNG"],
-                "coal": generation["COAL"]["TNG"],
+                x: production[x] for x in production if x != "battery storage"
             },
-            "source": URL.netloc,
+            "source": data["source"],
             "storage": {
-                "battery": generation["ENERGY STORAGE"]["TNG"],
+                "battery": production["battery storage"],
             },
             "zoneKey": zone_key,
         },
@@ -139,13 +109,8 @@ def fetch_production(
     )
 
 
-def get_csd_report_timestamp(report):
-    """Get the timestamp from a current supply/demand (CSD) report."""
-    return arrow.get(
-        re.search(r'"Last Update : (.*)"', report).group(1),
-        "MMM DD, YYYY HH:mm",
-        tzinfo=TIMEZONE,
-    ).datetime
+def get_current_timestamp():
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
