@@ -11,8 +11,8 @@ from requests import Session
 # Local library imports
 from parsers.lib import validation
 
-TIMEZONE = "AST"
-URL = "localhost:8000/province/NS"
+TIMEZONE = "Canada/Atlantic"
+URL = "http://localhost:8000/province/NS"
 EXCHANGE_REGIONS = {"CA-NB": "New Brunswick"}
 
 
@@ -43,6 +43,7 @@ def fetch_production(
             "hydro": (0, 500),
             "wind": (0, 700),
         },
+        logger=logger
     )
 
 
@@ -87,7 +88,7 @@ def fetch_exchange(
 
 
 def get_current_timestamp():
-    return arrow.to(TIMEZONE).datetime
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
