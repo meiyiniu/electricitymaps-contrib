@@ -70,7 +70,7 @@ def fetch_price(
             "currency": data["currency"],
             "datetime": get_current_timestamp(),
             "price": data["price"],
-            "source": URL.netloc,
+            "source": data["source"],
             "zoneKey": zone_key,
         }
     ]

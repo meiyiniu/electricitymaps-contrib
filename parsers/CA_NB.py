@@ -63,8 +63,9 @@ def fetch_exchange(
 
     sorted_zone_keys = "->".join(sorted([zone_key1, zone_key2]))
 
+    session = session or Session()
     data = session.get(f"{URL}/exchange").json()
-    flows = data["flow"]
+    flows = data["flows"]
 
     if EXCHANGE_REGIONS[zone_key2] not in flows:
         raise NotImplementedError(
