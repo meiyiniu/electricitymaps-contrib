@@ -43,7 +43,7 @@ def fetch_production(
             "hydro": (0, 500),
             "wind": (0, 700),
         },
-        logger=logger
+        logger=logger,
     )
 
 
