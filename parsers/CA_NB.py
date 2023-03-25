@@ -9,7 +9,7 @@ import arrow
 from requests import Session
 
 timezone = "Canada/Atlantic"
-URL = "localhost:8000/province/NB"
+URL = "http://localhost:8000/province/NB"
 
 EXCHANGE_REGIONS = {
     "CA-QC": "Quebec",
@@ -35,13 +35,14 @@ def fetch_production(
     if target_datetime:
         raise NotImplementedError("This parser is not yet able to parse past dates")
 
-    data = session.get(f"{URL}/price").json()
+    session = session or Session()    
+    data = session.get(f"{URL}/production").json()
 
     result = {
         "datetime": arrow.utcnow().floor("minute").datetime,
         "zoneKey": zone_key,
         "production": data["production"],
-        "storage": data["storage"] if data["storage"] else {},
+        "storage": data.get("storage") if data.get("storage") else {},
         "source": data["source"],
     }
 
