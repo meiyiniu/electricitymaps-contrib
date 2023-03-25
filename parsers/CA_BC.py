@@ -33,7 +33,7 @@ def fetch_exchange(
         raise NotImplementedError("This parser is not yet able to parse past dates")
 
     r = session or Session()
-    url = "localhost:8000/province/BC"
+    url = "http://localhost:8000/province/BC"
     data = r.get(f"{url}/exchange").json()
     flow = data["flow"]
 
@@ -50,7 +50,7 @@ def fetch_exchange(
 
 
 def get_current_timestamp():
-    return arrow.to(TIMEZONE).datetime
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
