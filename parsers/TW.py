@@ -9,6 +9,7 @@ import pandas as pd
 from requests import Session
 
 from parsers.lib.config import refetch_frequency
+from parsers.lib.exceptions import ParserException
 
 
 @refetch_frequency(timedelta(days=1))
@@ -24,6 +25,11 @@ def fetch_production(
     url = "http://www.taipower.com.tw/d006/loadGraph/loadGraph/data/genary.txt"
     s = session or Session()
     response = s.get(url)
+    if not response.status_code == 200:
+        raise ParserException(
+            "TW",
+            f"Query failed with status code {response.status_code} and {response.content}",
+        )
     data = response.json()
 
     dumpDate = data[""]
@@ -71,9 +77,11 @@ def fetch_production(
 
     # check output values coincide with total capacity by fuel type
     check_values = production.output <= production.capacity
-    assert check_values.loc[
-        ~check_values.index.isin(["Co-Gen"])
-    ].all(), "output > capacity"  # HACK: Co-Gen capacity is underestimated
+    modes_with_capacity_exceeded = production[~check_values].index.tolist()
+    for mode in modes_with_capacity_exceeded:
+        logger.warning(
+            f"Capacity exceeded for {mode} in {zone_key} at {dumpDate.datetime}"
+        )
 
     coal_capacity = (
         production.loc["Coal"].capacity + production.loc["IPP-Coal"].capacity

@@ -108,6 +108,46 @@ def validate_production_diffs(
     return [datapoints[i] for i in ok_diff[ok_diff].index]
 
 
+def validate_consumption(
+    datapoint: Dict, logger: Union[Logger, None]
+) -> Union[Dict[str, Any], None]:
+    """
+    Validates a production datapoint based on given constraints.
+    If the datapoint is found to be invalid then None is returned.
+    """
+    if logger is None:
+        logger = getLogger(__name__)
+    consumption: float = datapoint["consumption"]
+    if consumption == 0:
+        logger.warning(
+            "{} reported total of {}MW, expected consumption cannot be null".format(
+                datapoint["zoneKey"], consumption
+            ),
+            extra={"key": datapoint["zoneKey"]},
+        )
+        return
+    return datapoint
+
+
+def validate_exchange(
+    datapoint: Dict, logger: Logger = getLogger(__name__)
+) -> Union[Dict[str, Any], None]:
+    """
+    Validates a production datapoint based on given constraints.
+    If the datapoint is found to be invalid then None is returned.
+    """
+    exchange: float = datapoint["netFlow"]
+    if exchange is None:
+        logger.warning(
+            "{}: expected exchange cannot be null".format(
+                datapoint["sortedZoneKeys"], exchange
+            ),
+            extra={"key": datapoint["sortedZoneKeys"]},
+        )
+        return
+    return datapoint
+
+
 def validate(
     datapoint: Dict, logger: Union[Logger, None], **kwargs
 ) -> Union[Dict[str, Any], None]:
@@ -140,6 +180,8 @@ def validate(
             'nuclear': (low, high),
             'coal': (low, high),
             }
+        fake_zeros: bool
+            Check if there are fake zeros, eg all values are 0 or None
         All keys will be required.
         If the total is outside this range the datapoint will be invalidated.
         Defaults to None.
@@ -181,6 +223,8 @@ def validate(
     required: list[Any] = kwargs.pop("required", [])
     floor: Union[float, int, None] = kwargs.pop("floor", None)
     expected_range: Union[Tuple, Dict, None] = kwargs.pop("expected_range", None)
+    fake_zeros: bool = kwargs.pop("fake_zeros", False)
+
     if kwargs:
         raise TypeError("Unexpected **kwargs: %r" % kwargs)
 
@@ -231,6 +275,13 @@ def validate(
             if not check_expected_range(datapoint, total, expected_range, logger):
                 return
 
+    if fake_zeros:
+        if all((val == 0) or (val is None) for val in generation.values()):
+            logger.warning(
+                f"{datapoint['zoneKey']} - {datapoint['datetime']}: unrealistic datapoint, all production values are 0.0 MW or null"
+            )
+            return
+
     return datapoint
 
 
@@ -255,13 +306,14 @@ test_datapoint = {
     "source": "mysource.com",
 }
 
+
+test_datapoint_consumption = {
+    "zoneKey": "IN-NO",
+    "datetime": "2017-01-01T00:00:00Z",
+    "consumption": 0,
+    "source": "mysource.com",
+}
+
+
 if __name__ == "__main__":
-    print(
-        validate(
-            test_datapoint,
-            None,
-            required=["gas"],
-            expected_range=(100, 2000),
-            remove_negative=True,
-        )
-    )
+    print(validate_consumption(test_datapoint_consumption, None))
