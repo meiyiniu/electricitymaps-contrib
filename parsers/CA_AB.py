@@ -19,7 +19,7 @@ from parsers.lib import validation
 DEFAULT_ZONE_KEY = "CA-AB"
 MINIMUM_PRODUCTION_THRESHOLD = 10  # MW
 TIMEZONE = "Canada/Mountain"
-URL = "localhost:8000/province/AB"
+URL = "http://localhost:8000/province/AB"
 
 EXCHANGE_REGIONS = {
     "CA-AB": "Alberta",
@@ -110,7 +110,7 @@ def fetch_production(
 
 
 def get_current_timestamp():
-    return arrow.to(TIMEZONE).datetime
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
