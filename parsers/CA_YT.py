@@ -56,24 +56,10 @@ def fetch_production(
 
     requests_obj = session or Session()
 
-    url = "localhost:8000/province/YT"
+    url = "http://localhost:8000/province/YT"
     data = requests_obj.get(f"{url}/production").json()
     capacity = data["capacity"]
     production = data["production"]
-
-    soup = BeautifulSoup(data.text, "html.parser")
-
-    def find_div_by_class(soup_obj, cls):
-        return soup_obj.find("div", attrs={"class": cls})
-
-    # date is specified like "Thursday, June 22, 2017"
-    source_date = find_div_by_class(soup, "current_date").text
-
-    # time is specified like "11:55 pm" or "2:25 am"
-    source_time = find_div_by_class(soup, "current_time").text
-    datetime_text = "{} {}".format(source_date, source_time)
-    datetime_arrow = arrow.get(datetime_text, "dddd, MMMM D, YYYY h:mm A")
-    datetime_datetime = arrow.get(datetime_arrow.datetime, TIMEZONE).datetime
 
     data = {
         "datetime": get_current_timestamp(),
@@ -95,7 +81,7 @@ def fetch_production(
 
 
 def get_current_timestamp():
-    return arrow.to(TIMEZONE).datetime
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":
