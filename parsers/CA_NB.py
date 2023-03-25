@@ -35,7 +35,7 @@ def fetch_production(
     if target_datetime:
         raise NotImplementedError("This parser is not yet able to parse past dates")
 
-    session = session or Session()    
+    session = session or Session()
     data = session.get(f"{URL}/production").json()
 
     result = {
