@@ -7,10 +7,11 @@ from typing import Optional
 import arrow
 from requests import Session
 
-PRODUCTION_URL = "https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/production.json"
+PRODUCTION_URL = "http://localhost:8000/province/QC/production"
 CONSUMPTION_URL = "https://www.hydroquebec.com/data/documents-donnees/donnees-ouvertes/json/demande.json"
+
 # Reluctant to call it 'timezone', since we are importing 'timezone' from datetime
-timezone_id = "America/Montreal"
+TIMEZONE = "America/Montreal"
 
 
 def fetch_production(
@@ -40,33 +41,13 @@ def fetch_production(
             return 0.0
 
     data = _fetch_quebec_production(session)
-    list_res = []
-    for elem in reversed(data["details"]):
-        if elem["valeurs"]["total"] != 0:
-            list_res.append(
-                {
-                    "zoneKey": zone_key,
-                    "datetime": arrow.get(elem["date"], tzinfo=timezone_id).datetime,
-                    "production": {
-                        "biomass": if_exists(elem, "biomass"),
-                        "coal": 0.0,
-                        "hydro": if_exists(elem, "hydro"),
-                        "nuclear": 0.0,
-                        "oil": 0.0,
-                        "solar": if_exists(elem, "solar"),
-                        "wind": if_exists(elem, "wind"),
-                        # See Github issue #3218, Québec's thermal generation is at Bécancour gas turbine.
-                        # It is reported with a delay, and data source returning 0.0 can indicate either no generation or not-yet-reported generation.
-                        # Thus, if value is 0.0, overwrite it to None, so that backend can know this is not entirely reliable and might be updated later.
-                        "gas": if_exists(elem, "thermal") or None,
-                        # There are no geothermal electricity generation stations in Québec (and all of Canada for that matter).
-                        "geothermal": 0.0,
-                        "unknown": if_exists(elem, "unknown"),
-                    },
-                    "source": "hydroquebec.com",
-                }
-            )
-    return list_res
+    res = {
+        "zoneKey": zone_key,
+        "datetime": get_current_timestamp(),
+        "production": data["production"],
+        "source": "hydroquebec.com",
+    }
+    return res
 
 
 def fetch_consumption(
@@ -82,7 +63,7 @@ def fetch_consumption(
             list_res.append(
                 {
                     "zoneKey": zone_key,
-                    "datetime": arrow.get(elem["date"], tzinfo=timezone_id).datetime,
+                    "datetime": get_current_timestamp(),
                     "consumption": elem["valeurs"]["demandeTotal"],
                     "source": "hydroquebec.com",
                 }
@@ -118,6 +99,10 @@ def _fetch_quebec_consumption(
             )
         )
     return response.json()
+
+
+def get_current_timestamp():
+    return arrow.utcnow().to(TIMEZONE).datetime
 
 
 if __name__ == "__main__":

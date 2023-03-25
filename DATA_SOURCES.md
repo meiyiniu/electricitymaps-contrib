@@ -2,7 +2,7 @@
 
 ### Real-time electricity data sources
 
-Real-time electricity data is obtained using [parsers](https://github.com/tmrowco/electricitymap-contrib/tree/master/parsers).
+Real-time electricity data is obtained using [parsers](https://github.com/electricitymaps/electricitymaps-contrib/tree/master/parsers).
 &nbsp;<details><summary>Click to see the full list of sources</summary>
 
 - Åland: [Kraftnät Åland](http://www.kraftnat.ax/text2.con?iPage=28&iLan=1)
@@ -22,15 +22,17 @@ Real-time electricity data is obtained using [parsers](https://github.com/tmrowc
 - Belgium: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
 - Brazil: [ONS](http://www.ons.org.br/paginas/energia-agora/carga-e-geracao)
 - Bulgaria: [TSO](http://tso.bg/default.aspx/page-707/bg)
-- Canada (Alberta): [AESO](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet)
-- Canada (New Brunswick): [NB Power](https://tso.nbpower.com/Public/en/op/market/data.aspx)
-- Canada (Nova Scotia): [Nova Scotia Power](https://www.nspower.ca/clean-energy/todays-energy-stats)
-- Canada (Ontario): [IESO](http://www.ieso.ca/power-data)
-- Canada (Prince Edward Island): [Government of PEI](https://www.princeedwardisland.ca/en/feature/pei-wind-energy/)
-- Canada (Yukon): [Yukon Energy](http://www.yukonenergy.ca/energy-in-yukon/electricity-101/current-energy-consumption)
+- Canada:
+  - Alberta: [AESO](http://ets.aeso.ca/ets_web/ip/Market/Reports/CSDReportServlet)
+  - New Brunswick: [NB Power](https://tso.nbpower.com/Public/en/op/market/data.aspx)
+  - Nova Scotia: [Nova Scotia Power](https://www.nspower.ca/clean-energy/todays-energy-stats)
+  - Ontario: [IESO](http://www.ieso.ca/power-data)
+  - Québec: [Hydro-Québec](https://www.hydroquebec.com/residentiel/)
+  - Prince Edward Island: [Government of PEI](https://www.princeedwardisland.ca/en/feature/pei-wind-energy/)
+  - Yukon: [Yukon Energy](http://www.yukonenergy.ca/energy-in-yukon/electricity-101/current-energy-consumption)
 - Chile (SING/SIC): [Coordinador](https://sipub.coordinador.cl/api/v1/recursos/generacion_centrales_tecnologia_horario?)
 - Czech Republic: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
-- Costa Rica: [ICE](https://appcenter.grupoice.com/CenceWeb/CencePosdespachoNacional.jsf)
+- Costa Rica: [ICE](https://apps.grupoice.com/CenceWeb/data/sen/json/EnergiaHorariaFuentePlanta?anno=2022&mes=12&dia=27)
 - Croatia (Exchanges): [HOPS](https://www.hops.hr/wps/portal/hr/web)
 - Cyprus: [TSO](https://tsoc.org.cy/electrical-system/total-daily-system-generation-on-the-transmission-system/)
 - Denmark: [TSO](https://www.energidataservice.dk/groups/production-and-consumption)
@@ -53,14 +55,17 @@ Real-time electricity data is obtained using [parsers](https://github.com/tmrowc
 - Honduras: [ENTE](https://www.enteoperador.org/flujos-regionales-en-tiempo-real/)
 - Hungary: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
 - Iceland: [LANDSNET](https://amper.landsnet.is/generation/api/Values)
-- Ireland: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
+- Ireland: [Eirgrid](https://www.smartgriddashboard.com/)
 - Israel: [IEC](https://www.iec.co.il/en/pages/default.aspx)
 - Italy: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
 - India: [meritindia](http://meritindia.in/)
+- India: [Vidyut PRAVAH](https://vidyutpravah.in/)
+- India: [National Power Portal](https://npp.gov.in/dgrReports)
+- India: [Central Electricity Authority](https://cea.nic.in/daily-renewable-generation-report/?lang=en)
 - India (Andhra Pradesh): [CORE Dashboard](https://core.ap.gov.in/CMDashBoard/UserInterface/Power/PowerReport.aspx)
 - India (Chhattisgarh): [cspc.co.in](http://117.239.199.203/csptcl/GEN.aspx)
 - India (Delhi): [delhisldc](http://www.delhisldc.org/Redirect.aspx?Loc=0804)
-- India (Gujarat): [sldcguj](https://www.sldcguj.com/RealTimeData/RealTimeDemand.php)
+- India (Gujarat): [sldcguj](https://www.sldcguj.com/RealTimeData/RealTsimeDemand.php)
 - India (Himachal Pradesh): [HPSLDC](https://hpsldc.com/intra-state-power-transaction/)
 - India (Maharashtra) [mahasldc](https://mahasldc.in/wp-content/reports/sldc/mvrreport3.jpg)
 - India (Karnataka): [kptclsldc.in](http://kptclsldc.in/StateGen.aspx)
@@ -98,7 +103,7 @@ Real-time electricity data is obtained using [parsers](https://github.com/tmrowc
   - [Energy Market Services](https://em6live.co.nz)
 - Nicaragua: [CNDC](http://www.cndc.org.ni/)
 - Nigeria: [TCN ISO grid data portal](https://www.niggrid.com/GenerationProfile)
-- Northern Ireland: [SONI](http://www.soni.ltd.uk/InformationCentre/)
+- Northern Ireland: [Eirgrid](https://www.smartgriddashboard.com/)
 - Norway: [ENTSOE](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)
 - Oman: [GCCIA](https://www.gccia.com.sa/)
 - Panama: [CND](http://sitr.cnd.com.pa/m/pub/gen.html)
@@ -288,6 +293,41 @@ For many European countries, data is available from [ENTSO-E](https://transparen
 - Japan:
   - Tokyo: [Power-Plants](http://agora.ex.nii.ac.jp/earthquake/201103-eastjapan/energy/electrical-japan/operator/3.html.ja)
   - Kyūshū: [Electrical Japan](https://agora-ex-nii-ac-jp.translate.goog/earthquake/201103-eastjapan/energy/electrical-japan/operator/9.html.ja?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp&_x_tr_sch=http)
+  - Tohoku
+    - Wind: [The Wind Power](https://www.thewindpower.net/country_zones_en_11_japan.php)
+  - Hokkaidō
+    - Wind: [TSO - HEPCO](https://www.hepco.co.jp/english/environment/renewable_energy.html)
+    - Hydro [TSO - HEPCO](https://www.hepco.co.jp/english/ir/datadownloads.html)
+    - Hydro storage [TSO - HEPCO](https://wwwc.hepco.co.jp/hepcowwwsite/english/ir/pdf/hepco_group_report_2022.pdf)
+    - Oil & coal & gas: [TSO - HEPCO](https://www.hepco.co.jp/english/ir/datadownloads.html)
+    - Nuclear: [TSO - HEPCO](https://www.hepco.co.jp/english/ir/datadownloads.html)
+    - Solar: [TSO - HEPCO](https://www.hepco.co.jp/english/environment/renewable_energy.html)
+    - Biomass: [TSO - HEPCO](https://www.hepco.co.jp/english/environment/renewable_energy.html)
+    - Geothermal: [TSO - HEPCO](https://wwwc.hepco.co.jp/hepcowwwsite/english/ir/pdf/hepco_group_report_2022.pdf)
+  - Hokuriku
+    - Hydro, coal, oil, gas, nuclear & solar: [TSO - Rikuden](https://www.rikuden.co.jp/csr/attach/integratedreport2021EN.pdf)
+    - Wind: [The Wind Power](https://www.thewindpower.net/developer_en_1636_hokuriku-electric-power-group.php)
+    - Biomass: [Global Energy Monitor](https://www.gem.wiki/Tsuruga_power_station)
+  - Chūbu
+    - Biomass, hydro storage & geothermal: [TSO - Chuden](https://www.chuden.co.jp/english/energy/renewable/initiatives/)
+    - Hydro & Nuclear: [TSO - Chuden](https://www.chuden.co.jp/english/corporate/outline/)
+    - Solar & Wind: [TSO - Chuden](https://www.chuden.co.jp/english/resource/corporate/ecsr_report_2022_all.pdf)
+    - Coal & gas & oil: [Power Plants](https://en.wikipedia.org/wiki/Chubu_Electric_Power)
+  - Chūgoku
+    - Nuclear, hydro & hydro storage: [TSO - Energia](https://www.energia.co.jp/e/business/int_business/skills/renewable-energy.html)
+    - Solar: [Sonnedix](https://sonnedix.jp/power-plants/list-of-plants/)
+    - Wind: [The Wind Power](https://www.thewindpower.net/country_zones_en_11_japan.php)
+    - Coal, gas & oil: [TSO - Energia](https://www.energia.co.jp/e/business/int_business/skills/thermal-pg.html)
+  - Shikoku
+    - Wind: [The Wind Power](https://www.thewindpower.net/country_zones_en_11_japan.php)
+    - Hydro & Nuclear: [TSO - Yonden](https://www.yonden.co.jp/english/profile/profile.html)
+    - Hydro storage, coal, oil & gas: [TSO - Yonden](https://www.yonden.co.jp/english/assets/pdf/ir/tools/ann_r/annual_e_2022.pdf)
+    - Biomass: [Global Energy Monitor](https://www.gem.wiki/Saijo_power_station)
+    - Solar: [ISEP](https://www.isep.or.jp/en/411/)
+  - Okinawa
+    - Wind: [The Wind Power](https://www.thewindpower.net/zones_en_11_985.php)
+    - Coal, oil & gas: [TSO - Okiden](https://www.okiden.co.jp/shared/pdf/ir/ar/ar2021/oepc_ar21_00.pdf)
+    - Biomass: [Erex](https://www.erex.co.jp/en/business/power-generation/plant/)
 - Kosovo: [TSO](https://www.kostt.com/Content/ViewFiles/Transparency/BasicMarketDataOnGeneration/EN/Installed%20capacity%20of%20production%20units.pdf)
 - Kuwait
   - Gas & oil: [KAPSARC](https://datasource.kapsarc.org/api/datasets/1.0/kuwait-power-plants-database/attachments/power_plants_xlsx/)
@@ -325,7 +365,9 @@ For many European countries, data is available from [ENTSO-E](https://transparen
 - Norway:
   - Solar: [NVE Excel report](https://www.nve.no/media/13861/oversikt-over-solcelleanlegg-i-norge_2021.xlsx)
   - Other: [NVE](https://www.nve.no/energiforsyning/kraftproduksjon/?ref=mainmenu)
-- Northern Ireland: [ENTSO-E](https://m-transparency.entsoe.eu/generation/r2/installedGenerationCapacityAggregation/show)
+- Northern Ireland
+  - Thermal capacity, battery storage: [Connections Register, April 2022](https://www.soni.ltd.uk/media/documents/20220414-Connections-Register-14-April-2022.pdf)
+  - Renewables, smaller scale generation: [All-Island Generation Capacity Statement 2022-2031](https://www.soni.ltd.uk/media/documents/EirGrid_SONI_2022_Generation_Capacity_Statement_2022-2031.pdf)
 - Oman: [IRENA](https://www.irena.org/publications/2022/Apr/Renewable-Capacity-Statistics-2022)
 - Panama:
   - Renewables: [IRENA](https://www.irena.org/publications/2022/Apr/Renewable-Capacity-Statistics-2022)
@@ -335,7 +377,7 @@ For many European countries, data is available from [ENTSO-E](https://transparen
 - Philippines: [Philippine Department of Energy](https://www.doe.gov.ph/electric-power/list-existing-power-plants-june-30-2022)
 - Poland: [ARE](https://www.are.waw.pl/badania-statystyczne/wynikowe-informacje-statystyczne/publikacje-miesieczne#informacja-statystyczna-o-energii-elektrycznej)
 - Portugal:
-  - Biomass, Hydro, Solar, Wind: [REN](https://datahub.ren.pt/pt/eletricidade/balanco-mensal/)
+  - Biomass, Hydro, Solar, Wind, Gas: [REN](https://datahub.ren.pt/en/electricity/monthly-balance/)
   - Other: [ENTSO-E](https://transparency.entsoe.eu/generation/r2/installedGenerationCapacityAggregation/show)
 - Puerto Rico: [EIA](https://www.eia.gov/electricity/data/eia860M/)
 - Qatar: [IRENA](https://www.irena.org/publications/2022/Apr/Renewable-Capacity-Statistics-2022)
@@ -348,6 +390,7 @@ For many European countries, data is available from [ENTSO-E](https://transparen
   - Solar: [Energy Market Authority Statistics](https://www.ema.gov.sg/statistic.aspx?sta_sid=20170711hc85chOLVvWp)
   - Other: [Energy Market Authority](https://www.ema.gov.sg/statistic.aspx?sta_sid=20140730XofavKNX5Ti7)
 - Slovakia:
+  - Nuclear: [IAEA](https://pris.iaea.org/PRIS/CountryStatistics/CountryDetails.aspx?current=SK)
   - Renewables: [IRENA](https://www.irena.org/publications/2022/Apr/Renewable-Capacity-Statistics-2022)
   - Other: [SEPS](https://www.sepsas.sk/media/4951/rocenka-sed-2020.pdf)
 - Slovenia: [ENTSO-E](https://transparency.entsoe.eu/generation/r2/installedGenerationCapacityAggregation/show)
@@ -398,7 +441,7 @@ For many European countries, data is available from [ENTSO-E](https://transparen
   - NYISO: [NYISO Gold Book](https://www.nyiso.com/documents/20142/2226333/2021-Gold-Book-Final-Public.pdf)
   - PJM: [PJM](http://www.pjm.com/-/media/markets-ops/ops-analysis/capacity-by-fuel-type-2019.ashx?la=en)
   - PNM
-    - Coal: [Github|electricitymap-contrib|PR#4614](https://github.com/electricitymaps/electricitymaps-contrib/pull/4614)
+    - Coal: [Github|electricitymaps-contrib|PR#4614](https://github.com/electricitymaps/electricitymaps-contrib/pull/4614)
     - EIA: [EIA](https://www.eia.gov/electricity/data/eia860M/)
   - SPP: [SPP](https://www.spp.org/about-us/fast-facts/)
 - Uruguay: [UTE](https://portal.ute.com.uy/institucional/infraestructura/fuentes-de-generacion)
@@ -421,7 +464,8 @@ Cross-border transmission capacities between the zones are centralized in the [c
 - Australia (Victoria) ⇄ Australia (Tasmania): ["Basslink": 500 MW (regular) or 630 MW (temporarily)](https://en.wikipedia.org/wiki/Basslink)
 - Belgium ⇄ Germany ["Alegro": 1000MW](https://www.elia.be/en/infrastructure-and-projects/infrastructure-projects/alegro?clang=en)
 - [Bosnia and Herzegovina ⇄ Croatia](https://op.europa.eu/en/publication-detail/-/publication/785f224b-93cd-11e9-9369-01aa75ed71a1/language-en?WT.mc_id=Searchresult&WT.ria_c=37085&WT.ria_f=3608&WT.ria_ev=sea)
-- Bulgaria ⇄ Noth Macedonia [950 MW](https://ec.europa.eu/energy/sites/ener/files/documents/2nd_report_ic_with_neighbouring_countries_b5.pdf)
+- Bulgaria ⇄ Greece: [700 MW](https://ibex.bg/markets/dam/cross-zonal-capacities/)
+- Bulgaria ⇄ North Macedonia [950 MW](https://ec.europa.eu/energy/sites/ener/files/documents/2nd_report_ic_with_neighbouring_countries_b5.pdf)
 - Bulgaria ⇄ Turkey [2485 MW](https://ec.europa.eu/energy/sites/ener/files/documents/2nd_report_ic_with_neighbouring_countries_b5.pdf)
 - Canada (Alberta) ⇄ Canada (British Columbia): ["Path 1": 1000 MW (CA-AB -> CA-BC) 800 MW (CA-BC -> CA-AB)](https://www.aeso.ca/assets/Information-Documents/2011-001R-ATC-and-Transfer-Path-Management.pdf)
 - Canada (Alberta) ⇄ Canada (Saskatchewan): ["Path 2": 153 MW](https://www.aeso.ca/assets/Information-Documents/2011-001R-ATC-and-Transfer-Path-Management.pdf)
@@ -441,8 +485,9 @@ Cross-border transmission capacities between the zones are centralized in the [c
 - Great Britain ⇄ North Ireland: ["Moyle": 500 MW](http://www.wikiwand.com/en/HVDC_Moyle)
 - [Great Britain ⇄ Norway](#for-the-nordic-and-baltic-countries-capacities-are-availible-from-nord-pool)
 - Great Britain ⇄ Ireland: ["East-West Interconnector": 500 MW](https://en.wikipedia.org/wiki/East%E2%80%93West_Interconnector)
-- Great Britain ⇄ France: ["Cross-Channel": 2000 MW](https://en.wikipedia.org/wiki/HVDC_Cross-Channel) & ["IFA2": 1000 MW](https://en.wikipedia.org/wiki/IFA-2)
+- Great Britain ⇄ France: ["Cross-Channel": 2000 MW](https://en.wikipedia.org/wiki/HVDC_Cross-Channel), ["ElecLink": 1000 MW](https://www.getlinkgroup.com/en/our-group/eleclink/) & ["IFA2": 1000 MW](https://en.wikipedia.org/wiki/IFA-2)
 - Great Britain ⇄ Netherlands: ["BritNed": 1000 MW](https://en.wikipedia.org/wiki/BritNed)
+- Great Britain ⇄ Orkney: ["33kV SHEPD cables": 40 MW](https://www.ofgem.gov.uk/sites/default/files/docs/2018/12/orkney_final_needs_case_consultation.pdf)
 - Greece ⇄ Italy: ["GRITA": 500 MW](https://en.wikipedia.org/wiki/HVDC_Italy%E2%80%93Greece)
 - Greece ⇄ Turkey: [1900 MW](https://ec.europa.eu/energy/sites/ener/files/documents/2nd_report_ic_with_neighbouring_countries_b5.pdf)
 - Italy Central South ⇄ Italy Sardinia: ["SAPEI": 1000 MW](https://en.wikipedia.org/wiki/SAPEI)

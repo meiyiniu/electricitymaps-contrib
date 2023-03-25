@@ -1,8 +1,13 @@
-build
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.eslintcache
+coverage
+.nyc_output
+cypress/videos
+cypress/screenshots
+config
 
-## Netbeans folder
-nbproject
-
-## Automatically generated zones config
-src/config/exchanges.json
-src/config/zones.json
+tsconfig.node.tsbuildinfo
